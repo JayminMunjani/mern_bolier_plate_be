@@ -1,34 +1,21 @@
 export const userSchema = `
 type User {
     id:ID
-	profilePhoto:String
 	firstName: String
-    lastName: String
     email: String
-    mobile: String
     password: String
-    state: String
-    city: String
-    country: String
-    code: String
 	roleId:ID
-	isVerified: Boolean
+    code: String
 	isDeleted: Boolean
   }
   
   type UserRes {
     id:ID
-	profilePhoto:String
 	firstName: String
-    lastName: String
     email: String
-    mobile: String
     password: String
-    state: String
-    city: String
-    country: String
+	roleId: Role
     code: String
-	roleId:Role
 	isVerified: Boolean
 	isDeleted: Boolean
   }
@@ -36,16 +23,9 @@ type User {
 
   input userInput{
 	id:ID
-	profilePhoto:String
 	firstName: String
-    lastName: String
     email: String
-    mobile: String
     password: String
-    state: String
-    city: String
-	isVerified:Boolean
-    country: String
     code: String
   }
 

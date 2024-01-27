@@ -6,6 +6,7 @@ const userSchema = mongoose.Schema({
 	userName: String,
 	email: String,
 	password: String,
+	code: String,
 	roleId: {
 		type: mongoose.Schema.Types.ObjectId,
 		ref: "role",
