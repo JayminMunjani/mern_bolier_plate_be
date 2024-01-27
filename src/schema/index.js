@@ -1,8 +1,10 @@
 import { User, userMutation, userQuery, userSchema } from "./user";
+import { Role, roleSchema } from "./role";
 import { gql } from "graphql-tag";
 
 export const models = {
 	User,
+	Role,
 };
 
 export const typeDefs = gql`
@@ -19,6 +21,7 @@ export const typeDefs = gql`
 	}
 
 	${userSchema}
+	${roleSchema}
 `;
 
 export const resolvers = {

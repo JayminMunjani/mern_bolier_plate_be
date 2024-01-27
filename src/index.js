@@ -9,6 +9,7 @@ import { json } from "body-parser";
 import { expressMiddleware } from "@apollo/server/express4";
 import { connectDB } from "./db/index";
 import { makeExecutableSchema } from "@graphql-tools/schema";
+import { insertPredefineData } from "./preData";
 
 const app = express();
 const httpServer = http.createServer(app);
@@ -42,6 +43,7 @@ const startServer = async () => {
 	app.use(express.urlencoded({ extended: true, limit: "100mb" }));
 	connectDB()
 		.then(async (res) => {
+			insertPredefineData();
 			await new Promise((resolve) => {
 				httpServer.listen({ port: process.env.PORT }, resolve);
 			});
